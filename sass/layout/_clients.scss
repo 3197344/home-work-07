@@ -24,7 +24,16 @@
   display: flex;
   align-items: center;
   justify-content: center;
+    .clients &:hover,
+    .clients &:focus {
+      border: 1px solid var(--accent-color);
+      border-radius: 4px;
+      }
+    .clients & + & {
+  margin-left: 30px;
 }
+}
+
 .clients-section-icon {
   display: flex;
   align-items: center;
@@ -34,6 +43,7 @@
   border: 1px solid #afb1b8;
   border-radius: 4px;
   transition: border 250ms, border-radius 250ms cubic-bezier(0.4, 0, 0.2, 1);
+      
 }
 
 .client-icon {
@@ -44,16 +54,9 @@
   height: 60px;
   fill: rgba(175, 177, 184, 1);
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    .clients-section-icon:hover &,
+    .clients-section-icon:focus & {
+      fill: var(--accent-color);
 }
-.clients-section-icon:hover .client-icon,
-.clients-section-icon:focus .client-icon {
-  fill: var(--accent-color);
 }
-.clients .clients-section:hover,
-.clients .clients-section:focus {
-  border: 1px solid var(--accent-color);
-  border-radius: 4px;
-}
-.clients .clients-section + .clients-section {
-  margin-left: 30px;
-}
+

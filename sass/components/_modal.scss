@@ -21,18 +21,16 @@
   letter-spacing: 0.03em;
   color: var(--title-text-color);
 }
-/* --------Лейбл----инпуты------- */
 
 .modal-field {
   width: 450px;
   position: relative;
   display: flex;
   flex-direction: column;
-  /* outline: 1px solid tomato; */
-}
-.modal-box .modal-field:not(:last-child) {
+  .modal-box &:not(:last-child) {
   margin-bottom: 10px;
-}
+  }
+ }
 
 .form-input {
   margin: 0;
@@ -44,22 +42,25 @@
   height: 40px;
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
-
   font-weight: 400;
   font-size: 12px;
   line-height: 1.17;
   letter-spacing: 0.01em;
   color: var(--primary-text-color);
+    &:focus {
+    border: 4px solid #2196f3;
+    }
+    &:focus + .form-input-icon {
+  fill: var(--accent-color);
+}
 }
 
 .form-input-icon {
   position: absolute;
   top: 50%;
   transform: translateY(10%);
-
   left: 12px;
   display: inline-block;
-
   width: 18px;
   height: 18px;
   fill: var(--title-text-color);
@@ -71,25 +72,14 @@
   font-size: 12px;
   line-height: 1.17;
   letter-spacing: 0.01em;
-
   color: var(--primary-text-color);
 }
-
-.form-input:focus {
-  border: 4px solid #2196f3;
-}
-.form-input:focus + .form-input-icon {
-  fill: var(--accent-color);
-}
-
-/* ----------Комментарий--------------- */
 
 .comment {
   resize: none;
   width: 100%;
   min-height: 120px;
-}
-.modal-field .comment {
+    .modal-field & {
   margin: 0;
   padding: 0;
   margin-top: 4px;
@@ -107,17 +97,16 @@
   line-height: 1.14;
   letter-spacing: 0.01em;
   color: var(--primary-text-color);
+      &::placeholder {
+      color: rgba(117, 117, 117, 0.5);
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 1.14;
+      letter-spacing: 0.01em;
+      }
+  }
 }
 
-.modal-field .comment::placeholder {
-  color: rgba(117, 117, 117, 0.5);
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 1.14;
-  letter-spacing: 0.01em;
-}
-
-/*-------- кнопка Закрыть----------- */
 .modal .modal-button:hover,
 .modal .modal-button:focus {
   color: var(--second-accent-color);
@@ -149,13 +138,11 @@
   border: 1px solid rgba(0, 0, 0, 0.1);
   box-sizing: border-box;
   border-radius: 50%;
+    .modal &:focus,
+    .modal &:hover {
+      fill: var(--accent-color);
+    }
 }
-.modal .close-btn:focus,
-.modal .close-btn:hover {
-  fill: var(--accent-color);
-}
-
-/* -------------Соглашение на условия ------ */
 
 .modal-item {
   display: flex;
@@ -206,7 +193,7 @@
 .modal-link {
   color: var(--accent-color);
 }
-/* -------------кнопка Отправить в модалке---------- */
+
 .modal-button {
   padding: 0;
   margin: 0;
@@ -214,14 +201,11 @@
   justify-content: center;
   align-items: center;
   margin: 0 auto;
-
   width: 200px;
   height: 50px;
-
   text-align: center;
   border-radius: 4px;
   border: none;
-
   font-family: Roboto, sans-serif;
   color: var(--second-accent-color);
   background-color: var(--accent-color);
@@ -229,7 +213,6 @@
   font-size: 16px;
   line-height: 1.87;
   letter-spacing: 0.06em;
-
   transition: background-color 250ms, color 250ms,
-    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
