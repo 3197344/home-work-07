@@ -4,9 +4,7 @@
   height: 100vw;
   top: 0;
   background-color: rgba(0, 0, 0, 0.2);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+ @include position ();
   transition: opacity 250ms, visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
   &.is-hidden {
   opacity: 0;
